@@ -1,0 +1,18 @@
+db.createCollection("users")
+ db.users.ensureIndex({email:1},{unique:true})
+ db.users.ensureIndex({mobile:1},{unique:true})
+
+
+db.createCollections("login_info")
+ db.login_info.ensureIndex({username:1},{unique:1})
+
+
+db.createCollection("pages")
+ db.pages.ensureIndex({slug:1},{unique:true})
+
+
+db.createCollection("posts")
+
+
+
+
