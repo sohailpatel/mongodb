@@ -1,0 +1,7 @@
+var n1
+var n=db.login_info.find({username:"pqr"},{_id:1})
+n.forEach(function(x){n1=x._id});
+db.posts.find({_id:n1})
+
+db.posts.find({_id:1},{comments:{$elemMatch:{comment_id:1}}}) 
+
