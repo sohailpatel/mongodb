@@ -1,0 +1,16 @@
+db.users.insert({_id:1,name:"pqr",address:{building:"a",street:"11thlane",city:"pune"},mobile:"1234567859",type:"user"})
+db.users.insert({_id:2,name:"xyz",address:{building:"b",street:"12thlane",city:"pune"},mobile:"1243567859",type:"admin"})
+db.users.insert({_id:3,name:"abc",address:{building:"a",street:"11thlane",city:"pune"},mobile:"1256567859",type:"superadmin"})
+
+db.login_info.insert({_id:1,username:"pqr",password:"123",timestamp:"2016-03-02T23:25:56.314Z"})
+db.login_info.insert({_id:2,username:"xyz",password:"123",timestamp:"2016-03-01T21:25:55.314Z"})
+db.login_info.insert({_id:3,username:"abc",password:"123",timestamp:"2016-03-03T17:25:51.314Z"})
+
+db.pages.insert({_id:1,title:"First_page",content:"My first page",slug:"http://www.mongo.firstpage.com"})
+db.pages.insert({_id:2,title:"Second_page",content:"My second page",slug:"http://www.mongo.secondpage.com"})
+db.pages.insert({_id:3,title:"Third_page",content:"My third page",slug:"http://www.mongo.thirdpage.com"})
+
+db.posts.insert({_id:1,user_id:1,heading:"First_post",description:"Iam writing my first post",like:0,comments:[]})
+db.posts.insert({_id:2,user_id:1,heading:"Second_post",description:"Iam writing my second post",like:0,comments:[]})
+db.posts.insert({_id:3,user_id:2,heading:"First_post",description:"Iam writing my first post",like:0,comments:[]})
+
