@@ -1,0 +1,13 @@
+
+db.users.insert({username:"pqr",password:"123",last_login:"2016-03-02T23:25:56.314Z",name:"pqr",address:{building:"a",street:"11thlane",city:"pune"},mobile:"1234567859",type:ObjectId("56f22adbb8216a6bb3d36c95")})
+db.users.insert({username:"xyz",password:"123",last_login:"2016-03-01T23:25:55.314Z",name:"xyz",address:{building:"b",street:"12thlane",city:"pune"},mobile:"1243567859",type: ObjectId("56f22af6b8216a6bb3d36c96")})
+db.users.insert({username:"abc",password:"123",last_login:"2016-03-02T17:25:56.314Z",name:"abc",address:{building:"a",street:"11thlane",city:"pune"},mobile:"1256567859",type: ObjectId("56f22b05b8216a6bb3d36c97")})
+
+db.pages.insert({title:"First_page",content:"My first page",slug:"first-page"})
+db.pages.insert({title:"Second_page",content:"My second page",slug:"second-page"})
+db.pages.insert({title:"Third_page",content:"My third page",slug:"third-page"})
+
+db.posts.insert({heading:"First_post",description:"Iam writing my first post",like:[],comments:[]})
+db.posts.insert({heading:"Second_post",description:"Iam writing my second post",like:[],comments:[]})
+db.posts.insert({heading:"First_post",description:"Iam writing my first post",like:[],comments:[]})
+

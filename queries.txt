@@ -1,0 +1,29 @@
+
+db.counters.insert({_id:"comment_id",seq:0})
+function getNextSequence(name) {
+   var ret = db.counters.findAndModify(
+          {
+            query: { _id: name },
+            update: { $inc: { seq: 1 } },
+            new: true
+          }
+   );
+
+   return ret.seq;
+}
+
+
+db.posts.update({_id:ObjectId("56f227ffb8216a6bb3d36c92")},{$push:{comments:{comment_id:getNextSequence("comment_id"),user_id:ObjectId("56f151b3ca59a1c8ad086e5e"),data:"happy for you",like:[]}}})
+db.posts.update({_id:ObjectId("56f227ffb8216a6bb3d36c92")},{$push:{comments:{comment_id:getNextSequence("comment_id"),user_id:ObjectId("56f1514aca59a1c8ad086e5c"),data:"keep it up",like:[]}}})
+db.posts.update({_id: ObjectId("56f22800b8216a6bb3d36c94")},{$push:{comments:{comment_id:getNextSequence("comment_id"),user_id:ObjectId("56f1514aca59a1c8ad086e5c"),data:"happy for you",like:[]}}})
+
+db.posts.update({_id: ObjectId("56f22800b8216a6bb3d36c94")},{$push:{like:{user_id:ObjectId("56f1514aca59a1c8ad086e5c")}}})
+db.posts.update({_id: ObjectId("56f22800b8216a6bb3d36c94"),"comments.comment_id":4},{$push:{"comments.$.like":{user_id:ObjectId("56f1514aca59a1c8ad086e5c")}}})
+
+
+db.posts.aggregate({$match:{_id: ObjectId("56f22800b8216a6bb3d36c94")}},{$project:{total:{$size:"$comments"}}})
+
+db.users.find().sort({"last_login":-1}).limit(1)
+
+db.posts.aggregate([{$match:{$and:[{_id:ObjectId("56f22800b8216a6bb3d36c94")},{"comments.comment_id":4}]}},{$unwind:"$comments"},{$unwind:"$comments.like"},{$group:{_id:"null",total:{$sum:1}}}])
+
