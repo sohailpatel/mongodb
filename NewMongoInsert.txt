@@ -2,7 +2,7 @@
 db.createCollection("users")
  db.users.ensureIndex({email:1},{unique:true})
  db.users.ensureIndex({mobile:1},{unique:true})
- db.login_info.ensureIndex({username:1},{unique:1})
+ db.users.ensureIndex({username:1},{unique:1})
 db.users.insert({username:"pqr",password:"123",last_login:"2016-03-02T23:25:56.314Z",name:"pqr",address:{building:"a",street:"11thlane",city:"pune"},mobile:"1234567859",type:ObjectId("56f22adbb8216a6bb3d36c95")})
 db.users.insert({username:"xyz",password:"123",last_login:"2016-03-01T23:25:55.314Z",name:"xyz",address:{building:"b",street:"12thlane",city:"pune"},mobile:"1243567859",type: ObjectId("56f22af6b8216a6bb3d36c96")})
 db.users.insert({username:"abc",password:"123",last_login:"2016-03-02T17:25:56.314Z",name:"abc",address:{building:"a",street:"11thlane",city:"pune"},mobile:"1256567859",type: ObjectId("56f22b05b8216a6bb3d36c97")})
